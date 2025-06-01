@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced AI CGPA Calculator</title>
+    <title>AI CGPA Calculator</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/4.1.1/tesseract.min.js"></script>
     <style>
         * {
@@ -555,7 +555,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🎓 Enhanced AI CGPA Calculator</h1>
+            <h1>🎓AI CGPA Calculator</h1>
             <p>Advanced AI-powered marksheet scanner and CGPA calculator with enhanced features</p>
         </div>
 
@@ -953,7 +953,7 @@
             );
         }
 
-        function findSubjectCredits(subjectName) {
+            function findSubjectCredits(subjectName) {
             const name = subjectName.toLowerCase();
             
             // Direct match
@@ -961,11 +961,20 @@
                 return subjectCredits[name];
             }
             
-            // Partial match
+            // Partial match with more flexible matching
             for (let subject in subjectCredits) {
-                if (name.includes(subject) || subject.includes(name)) {
+                const subjectLower = subject.toLowerCase();
+                if (name.includes(subjectLower) || subjectLower.includes(name)) {
                     return subjectCredits[subject];
                 }
+            }
+            
+            // Special cases for specific subjects
+            if (name.includes('holistic wellness')) {
+                return 1;
+            }
+            if (name.includes('innovation practicum')) {
+                return 1;
             }
             
             // Default credits based on subject type
@@ -1094,21 +1103,21 @@
                     <div class="result-value">${sgpa.toFixed(2)}</div>
                     <div class="stats-grid" style="margin-top: 20px;">
                         <div class="stat-card">
-                            <h4>Letter Grade</h4>
-                            <div class="stat-value" style="color: white;">${grade}</div>
-                        </div>
-                        <div class="stat-card">
-                            <h4>Percentage</h4>
-                            <div class="stat-value" style="color: white;">${percentage}%</div>
-                        </div>
-                        <div class="stat-card">
-                            <h4>Total Credits</h4>
-                            <div class="stat-value" style="color: white;">${totalCredits}</div>
-                        </div>
-                        <div class="stat-card">
-                            <h4>Total Points</h4>
-                            <div class="stat-value" style="color: white;">${totalPoints}</div>
-                        </div>
+    <h4>Letter Grade</h4>
+    <div class="stat-value">${grade}</div>
+</div>
+<div class="stat-card">
+    <h4>Percentage</h4>
+    <div class="stat-value">${percentage}%</div>
+</div>
+<div class="stat-card">
+    <h4>Total Credits</h4>
+    <div class="stat-value">${totalCredits}</div>
+</div>
+<div class="stat-card">
+    <h4>Total Points</h4>
+    <div class="stat-value">${totalPoints}</div>
+</div>
                     </div>
                 </div>
             `;
@@ -1248,21 +1257,21 @@
                     <div class="result-value">${cgpa.toFixed(2)}</div>
                     <div class="stats-grid" style="margin-top: 20px;">
                         <div class="stat-card">
-                            <h4>Letter Grade</h4>
-                            <div class="stat-value" style="color: white;">${grade}</div>
-                        </div>
-                        <div class="stat-card">
-                            <h4>Percentage</h4>
-                            <div class="stat-value" style="color: white;">${percentage}%</div>
-                        </div>
-                        <div class="stat-card">
-                            <h4>Total Semesters</h4>
-                            <div class="stat-value" style="color: white;">${validEntries}</div>
-                        </div>
-                        <div class="stat-card">
-                            <h4>Total Credits</h4>
-                            <div class="stat-value" style="color: white;">${totalCredits}</div>
-                        </div>
+    <h4>Letter Grade</h4>
+    <div class="stat-value">${grade}</div>
+</div>
+<div class="stat-card">
+    <h4>Percentage</h4>
+    <div class="stat-value">${percentage}%</div>
+</div>
+<div class="stat-card">
+    <h4>Total Semesters</h4>
+    <div class="stat-value">${validEntries}</div>
+</div>
+<div class="stat-card">
+    <h4>Total Credits</h4>
+    <div class="stat-value">${totalCredits}</div>
+</div>
                     </div>
                 </div>
                 ${semesterTable}
