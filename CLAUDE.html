@@ -510,46 +510,307 @@
             color: #333;
         }
 
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-            
-            .header h1 {
-                font-size: 2.5rem;
-            }
-            
-            .nav-tabs {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .tab-content {
-                padding: 25px;
-            }
-            
-            .sgpa-entry {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
+       /* Enhanced Mobile Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+        max-width: 100%;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+        margin-bottom: 8px;
+    }
+    
+    .header p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    
+    .nav-tabs {
+        flex-direction: column;
+        gap: 8px;
+        padding: 15px 10px;
+        margin-bottom: 20px;
+    }
+    
+    .tab-btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .tab-content {
+        padding: 20px 15px;
+        margin: 0 5px;
+    }
+    
+    .upload-area {
+        padding: 30px 15px;
+        margin: 15px 0;
+    }
+    
+    .upload-icon {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .upload-area p {
+        font-size: 0.9rem;
+        margin: 5px 0;
+    }
+    
+    .upload-area small {
+        font-size: 0.8rem;
+    }
+    
+    #imagePreview {
+        max-height: 250px;
+        width: 100%;
+        object-fit: contain;
+    }
+    
+    .btn {
+        padding: 14px 24px;
+        font-size: 1rem;
+        margin: 8px 5px;
+        width: calc(100% - 10px);
+        box-sizing: border-box;
+    }
+    
+    .sgpa-entry {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px;
+        text-align: left;
+    }
 
-            .sgpa-entry label {
-                min-width: auto;
-            }
+    .sgpa-entry label {
+        min-width: auto;
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    
+    .sgpa-entry input {
+        width: 100%;
+        margin: 5px 0;
+        padding: 14px 16px;
+        font-size: 1rem;
+    }
+    
+    .remove-btn {
+        width: 100%;
+        margin-top: 10px;
+        padding: 12px;
+    }
 
-            .upload-area {
-                padding: 40px 20px;
-            }
+    .result-section {
+        padding: 25px 15px;
+        margin: 20px 0;
+    }
+    
+    .result-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
 
-            .result-section .result-value {
-                font-size: 3rem;
-            }
+    .result-section .result-value {
+        font-size: 2.5rem;
+        margin: 15px 0;
+    }
 
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin: 20px 0;
+    }
+    
+    .stat-card {
+        padding: 15px 10px;
+        text-align: center;
+    }
+    
+    .stat-card h4 {
+        font-size: 0.8rem;
+        margin-bottom: 8px;
+    }
+    
+    .stat-card .stat-value {
+        font-size: 1.3rem;
+    }
+    
+    .subjects-table {
+        font-size: 0.85rem;
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap;
+    }
+    
+    .subjects-table thead,
+    .subjects-table tbody,
+    .subjects-table tr {
+        display: block;
+    }
+    
+    .subjects-table tr {
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        padding: 10px;
+        white-space: normal;
+        background: white;
+    }
+    
+    .subjects-table th,
+    .subjects-table td {
+        display: block;
+        padding: 8px 0;
+        text-align: left;
+        border: none;
+    }
+    
+    .subjects-table th {
+        background: none;
+        color: #667eea;
+        font-weight: 700;
+        font-size: 0.9rem;
+    }
+    
+    .subjects-table thead {
+        display: none;
+    }
+    
+    .subjects-table td:before {
+        content: attr(data-label) ": ";
+        font-weight: 600;
+        color: #667eea;
+        display: inline-block;
+        width: 100px;
+    }
+    
+    .grade-input, .credits-input {
+        width: 80px !important;
+        padding: 8px !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .loading {
+        padding: 25px 15px;
+    }
+    
+    .spinner {
+        width: 40px;
+        height: 40px;
+        border-width: 4px;
+    }
+    
+    .progress-bar {
+        margin: 15px 0;
+    }
+    
+    .error-message {
+        padding: 15px;
+        margin: 15px 0;
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra small devices (phones, 480px and down) */
+@media (max-width: 480px) {
+    .container {
+        padding: 8px;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .header p {
+        font-size: 0.9rem;
+    }
+    
+    .tab-content {
+        padding: 15px 10px;
+    }
+    
+    .upload-area {
+        padding: 25px 10px;
+    }
+    
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+    
+    .result-section .result-value {
+        font-size: 2rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .stat-card {
+        padding: 12px 8px;
+    }
+    
+    .sgpa-entry {
+        padding: 12px;
+    }
+    
+    .sgpa-entry input {
+        padding: 12px 14px;
+    }
+}
+
+/* Landscape orientation for mobile devices */
+@media (max-width: 768px) and (orientation: landscape) {
+    .header h1 {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+    
+    .header p {
+        font-size: 0.9rem;
+    }
+    
+    .nav-tabs {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .tab-btn {
+        width: auto;
+        min-width: 120px;
+        margin: 5px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+    .btn, .tab-btn, .remove-btn {
+        min-height: 44px;
+        touch-action: manipulation;
+    }
+    
+    .sgpa-entry input, .grade-input, .credits-input {
+        min-height: 44px;
+        touch-action: manipulation;
+    }
+    
+    .upload-area {
+        min-height: 120px;
+        touch-action: manipulation;
+    }
+}
     </style>
 </head>
 <body>
